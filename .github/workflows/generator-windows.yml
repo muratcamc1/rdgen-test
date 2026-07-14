@@ -151,11 +151,13 @@ jobs:
           submodules: recursive
 
       - name: Checkout source code
-        if: ${{ env.VERSION == 'master' }}
+        if: ${{ env.VERSION != 'master' }}
         uses: actions/checkout@v4
         with:
           repository: rustdesk/rustdesk
+          ref: ${{ env.VERSION }}
           submodules: recursive
+          fetch-depth: 1
 
       - name: Restore bridge files
         uses: actions/download-artifact@master
