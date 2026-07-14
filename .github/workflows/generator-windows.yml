@@ -143,7 +143,7 @@ jobs:
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"uuid": "${{ inputs.uuid }}", "status": "5% complete"}'
 
-       - name: Checkout source code
+      - name: Checkout source code
         uses: actions/checkout@v4
         with:
           repository: rustdesk/rustdesk
